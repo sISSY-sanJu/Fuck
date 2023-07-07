@@ -8,6 +8,7 @@ intents:
 - info_condition
 - mood_great
 - mood_unhappy
+- nlu_fallback
 entities:
 - condition
 - infotype
@@ -51,6 +52,10 @@ responses:
   - text: What disease or condition do you need help with?
   utter_ask_infotype:
   - text: What disease or condition do you need help with?
+  utter_default:
+  - text: I'm sorry, I can't help you.
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
 actions:
 - utter_greet
 - action_info
@@ -60,8 +65,11 @@ actions:
 - utter_happy
 - utter_iamabot
 - utter_ask_condition
+- action_default_fallback
 - utter_ask_infotype
 - validate_info_form
+- utter_default
+- utter_ask_rephrase
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

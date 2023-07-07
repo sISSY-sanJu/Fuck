@@ -13,6 +13,8 @@ from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import pandas as pd
+from rasa_sdk.events import UserUtteranceReverted
+
 
 
 class ActionInfo(Action):
@@ -69,3 +71,21 @@ class ValidateInfoForm(FormValidationAction):
             dispatcher.utter_message(text="Sorry, I don't have information regarding that.")
             return {"infotype": None}
         return {"infotype": slot_value}
+
+class ActionDefaultFallback(Action):
+    """Executes the fallback action and goes back to the previous state
+    of the dialogue"""
+
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(response="utter_default")
+
+        # Revert user message which led to fallback.
+        return [UserUtteranceReverted()]

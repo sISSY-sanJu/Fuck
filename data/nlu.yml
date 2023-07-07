@@ -1,5 +1,9 @@
 version: "3.1"
 nlu:
+- intent: nlu_fallback
+  examples: |
+    - sflsjfi
+    - dbfjkbd jfj sjffo dfgjdn
 - intent: greet
   examples: |
     - hey
@@ -17,6 +21,35 @@ nlu:
     - good afternoon
     - Hi
     - Hello
+    - Howdy
+    - Greetings
+    - Hey, what's up?
+    - Yo
+    - Wassup?
+    - Hiya
+    - Hey, how's it going?
+    - Good to see you
+    - Hiya, mate
+    - What's crackin'?
+    - Hey, buddy
+    - Hey, folks
+    - Salutations
+    - Hola
+    - Bonjour
+    - Hey, howdy!
+    - Hey, there!
+    - Hi, friend
+    - Hello, bot
+    - Good day
+    - Hi, nice to meet you
+    - Hey, what's happening?
+    - G'day, mate
+    - Hey, beautiful
+    - Hi, how are you doing?
+    - Hey, sunshine
+    - Hey, partner
+    - Hi, lovely people
+    - Hey, good-lookin'!
 - intent: goodbye
   examples: |
     - cu
@@ -30,6 +63,25 @@ nlu:
     - bye bye
     - see you later
     - Goodbye
+    - Take care
+    - Farewell
+    - See you soon
+    - Until next time
+    - Peace out
+    - Catch you later
+    - Adios
+    - Have a great day
+    - So long
+    - Bye for now
+    - See you tomorrow
+    - Have a good one
+    - Take it easy
+    - Later, alligator
+    - Bye, take care
+    - Hasta luego
+    - See you next time
+    - Goodnight and sweet dreams
+    - Wishing you well
 - intent: mood_great
   examples: |
     - perfect
@@ -46,6 +98,21 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - fantastic
+    - on top of the world
+    - ecstatic
+    - thrilled
+    - overjoyed
+    - delighted
+    - elated
+    - pumped up
+    - full of joy
+    - euphoric
+    - blissful
+    - feeling fantastic
+    - in a state of bliss
+    - couldn't be better
+    - beaming with happiness
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -62,12 +129,41 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - feeling down
+    - miserable
+    - devastated
+    - heartbroken
+    - feeling low
+    - gloomy
+    - dejected
+    - upset
+    - frustrated
+    - down in the dumps
+    - disheartened
+    - sorrowful
+    - feeling blue
+    - overwhelmed with sadness
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - is this a bot?
+    - is this a human?
+    - are you an AI?
+    - are you real?
+    - am I chatting with a machine?
+    - am I chatting with a person?
+    - is there a real person behind this?
+    - is there an AI behind this?
+    - can you prove you're not a bot?
+    - can you prove you're human?
+    - are you a robot or a person?
+    - do you have feelings?
+    - do you have emotions?
+    - can you think?
+    - can you pass the Turing test?
 - intent: info_condition
   examples: |
     - need some [info]{"entity": "infotype", "value": "Overview"} on [allergies](condition)
@@ -94,6 +190,28 @@ nlu:
     - [Conjunctivitis](condition)
     - I need some [info]{"entity": "infotype", "value": "Overview"} on [Gastroenteritis]{"entity": "condition", "value": "Diarrhea"}
     - I need [info]{"entity": "infotype", "value": "Overview"} on [Pinkeye]{"entity": "condition", "value": "Conjunctivitis"}
+    - Can you provide an [overview]{"entity": "infotype", "value": "Overview"} of [allergies](condition)?
+    - Tell me about [Conjunctivitis](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
+    - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [asthma](condition)?
+    - How is [pneumonia](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+#    - Are there any [natural remedies]{"entity": "infotype", "value": "Lifestyle and home remedies"} for [eczema](condition)?
+#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [diabetes](condition)?
+#    - Can [migraine](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
+#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [hypertension](condition).
+#    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [arthritis](condition)?
+#    - How is [depression](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+#    - Are there any effective [treatments]{"entity": "infotype", "value": "Treatment"} for [insomnia](condition)?
+#    - How can I manage my [anxiety](condition) on a daily basis?
+#    - Are there any [lifestyle changes]{"entity": "infotype", "value": "Lifestyle and home remedies"} that can help with [digestive disorders](condition)?
+#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [heart disease](condition)?
+#    - Can [arthritis](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
+#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [asthma](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
+#    - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [insomnia](condition)?
+#    - How is [diabetes](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+#    - Are there any [natural remedies]{"entity": "infotype", "value": "Lifestyle and home remedies"} for [migraine](condition)?
+#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [anxiety](condition)?
+#    - Can [digestive disorders](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
+#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [heart disease](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
 - synonym: Overview
   examples: |
     - info
