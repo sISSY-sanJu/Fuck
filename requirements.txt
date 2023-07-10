@@ -191,3 +191,5 @@ websockets==10.4
 Werkzeug==2.3.6
 wrapt==1.15.0
 yarl==1.9.2
+
+pandas~=2.0.2

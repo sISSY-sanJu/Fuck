@@ -56,6 +56,24 @@ responses:
   - text: I'm sorry, I can't help you.
   utter_ask_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_next:
+  - buttons:
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Overview"}
+      title: Overview
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Symptoms"}
+      title: Symptoms
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"When to see a doctor"}
+      title: When to see a doctor
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Causes"}
+      title: Causes
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Risk factors"}
+      title: Risk factors
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Complications"}
+      title: Complications
+    - payload: /info_condition{"condition":"Conjunctivitis","infotype":"Complications"}
+      title: Prevention
+    text: Do want more info?
+
 actions:
 - utter_greet
 - action_info
@@ -70,6 +88,7 @@ actions:
 - validate_info_form
 - utter_default
 - utter_ask_rephrase
+- utter_next
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

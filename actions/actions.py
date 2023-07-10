@@ -13,8 +13,8 @@ from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import pandas as pd
+from rasa_sdk.events import SlotSet
 from rasa_sdk.events import UserUtteranceReverted
-
 
 
 class ActionInfo(Action):
@@ -32,11 +32,20 @@ class ActionInfo(Action):
         result2 = data[infotype].values[0]
         dispatcher.utter_message(text="Here you go!")
         dispatcher.utter_message(text=result2)
-        return []
+        dispatcher.utter_message(template="utter_next")
+        return [SlotSet('condition', None), SlotSet('infotype', None)]
+
 
 class ValidateInfoForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_info_form"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(template='utter_select_next')
+        return []
 
     def validate_condition(
             self,
@@ -47,7 +56,7 @@ class ValidateInfoForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `condition` value."""
 
-        #Checking if slot_value i.e Condition name is in first column of database
+        # Checking if slot_value i.e Condition name is in first column of database
         print("Inside validate condition")
         df = pd.read_csv('Untitled spreadsheet - Sheet1.csv', sep=',')
         first_column = df['Condition'].values
@@ -72,6 +81,18 @@ class ValidateInfoForm(FormValidationAction):
             return {"infotype": None}
         return {"infotype": slot_value}
 
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
+
+        dispatcher.utter_message(template='utter_next')
+
+        return [SlotSet('condition', None), SlotSet('infotype', None)]
+
+
 class ActionDefaultFallback(Action):
     """Executes the fallback action and goes back to the previous state
     of the dialogue"""
@@ -80,10 +101,10 @@ class ActionDefaultFallback(Action):
         return "action_default_fallback"
 
     async def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(template="utter_default")
 

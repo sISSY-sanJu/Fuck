@@ -75,6 +75,24 @@ stories:
   - active_loop: null
   - action: action_info
 
+- story: interactive story
+  steps:
+  - intent: info_condition
+  - action: info_form
+  - active_loop: info_form
+  - slot_was_set:
+    - requested_slot: condition
+  - slot_was_set:
+    - condition: Mononucleosis
+  - slot_was_set:
+      - requested_slot: infotype
+  - slot_was_set:
+      - infotype: Overview
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_info
+
 - story: out_of_scope
   steps:
   - intent: nlu_fallback
