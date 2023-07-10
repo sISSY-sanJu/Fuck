@@ -85,7 +85,7 @@ class ActionDefaultFallback(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(response="utter_default")
+        dispatcher.utter_message(template="utter_default")
 
         # Revert user message which led to fallback.
-        return [UserUtteranceReverted()]
+        return []
