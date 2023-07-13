@@ -27,12 +27,12 @@ class ActionInfo(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         condition = tracker.get_slot('condition')
         infotype = tracker.get_slot('infotype')
-        df = pd.read_csv('Untitled spreadsheet - Sheet1.csv', sep=',')
+        df = pd.read_csv('Data_Mayo.csv', sep=',')
         data = df[df['Condition'] == condition]
         result2 = data[infotype].values[0]
         dispatcher.utter_message(text="Here you go!")
         dispatcher.utter_message(text=result2)
-        dispatcher.utter_message(template="utter_next")
+        dispatcher.utter_message(response="utter_next")
         return [SlotSet('condition', None), SlotSet('infotype', None)]
 
 
@@ -44,7 +44,7 @@ class ValidateInfoForm(FormValidationAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(template='utter_select_next')
+        # dispatcher.utter_message(response='utter_next')
         return []
 
     def validate_condition(
@@ -58,7 +58,7 @@ class ValidateInfoForm(FormValidationAction):
 
         # Checking if slot_value i.e Condition name is in first column of database
         print("Inside validate condition")
-        df = pd.read_csv('Untitled spreadsheet - Sheet1.csv', sep=',')
+        df = pd.read_csv('Data_Mayo.csv', sep=',')
         first_column = df['Condition'].values
         if slot_value not in first_column:
             dispatcher.utter_message(text="Sorry, I don't have information regarding that.")
@@ -73,7 +73,7 @@ class ValidateInfoForm(FormValidationAction):
             domain: DomainDict,
     ) -> Dict[Text, Any]:
 
-        df = pd.read_csv('Untitled spreadsheet - Sheet1.csv', sep=',')
+        df = pd.read_csv('Data_Mayo.csv', sep=',')
         print("Inside validate infotype")
         headers = df.columns.values[1:]
         if slot_value not in headers:
@@ -88,7 +88,7 @@ class ValidateInfoForm(FormValidationAction):
             domain: Dict[Text, Any],
     ) -> List[Dict]:
 
-        dispatcher.utter_message(template='utter_next')
+        # dispatcher.utter_message(response='utter_next')
 
         return [SlotSet('condition', None), SlotSet('infotype', None)]
 
@@ -106,7 +106,25 @@ class ActionDefaultFallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_default")
+        dispatcher.utter_message(response="utter_default")
+
+        # Revert user message which led to fallback.
+        return []
+
+class ActionDefaultFallback(Action):
+    """Executes the fallback action and goes back to the previous state
+    of the dialogue"""
+
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(response="utter_default")
 
         # Revert user message which led to fallback.
         return []

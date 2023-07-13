@@ -194,33 +194,30 @@ nlu:
     - Tell me about [Conjunctivitis](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
     - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [asthma](condition)?
     - How is [pneumonia](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
-#    - Are there any [natural remedies]{"entity": "infotype", "value": "Lifestyle and home remedies"} for [eczema](condition)?
-#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [diabetes](condition)?
-#    - Can [migraine](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
-#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [hypertension](condition).
-#    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [arthritis](condition)?
-#    - How is [depression](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
-#    - Are there any effective [treatments]{"entity": "infotype", "value": "Treatment"} for [insomnia](condition)?
-#    - How can I manage my [anxiety](condition) on a daily basis?
-#    - Are there any [lifestyle changes]{"entity": "infotype", "value": "Lifestyle and home remedies"} that can help with [digestive disorders](condition)?
-#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [heart disease](condition)?
-#    - Can [arthritis](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
-#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [asthma](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
-#    - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [insomnia](condition)?
-#    - How is [diabetes](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
-#    - Are there any [natural remedies]{"entity": "infotype", "value": "Lifestyle and home remedies"} for [migraine](condition)?
-#    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of [anxiety](condition)?
-#    - Can [digestive disorders](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
-#    - Provide an [overview]{"entity": "infotype", "value": "Overview"} of [heart disease](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
+    - I need [info](infotype)
+    - [Absence seizure](condition)
+    - I need [info]{"entity": "infotype", "value": "Overview"} on [Achalasia](condition)
+    - [Achalasia](condition)
+    - [Acanthosis nigricans](condition)
+    - [Achilles tendinitis](condition)
+    - [Dermatitis](condition)
+    - [Dermatographia](condition)
+    - [Desmoid tumors](condition)
+    - [Mosquito bites](condition)
+    - [Retractile testicle](condition)
+    - [Spinal stenosis](condition)
+    - I need [info]{"entity": "infotype", "value": "Overview"} on [Yips](condition)
 - synonym: Overview
   examples: |
     - info
     - INFO
+    - overview
 - synonym: Treatment
   examples: |
     - can I do
     - can I help
     - treatments
+    - treatment
 - synonym: Symptoms
   examples: |
     - symptoms
@@ -239,6 +236,31 @@ nlu:
 - synonym: Prevention
   examples: |
     - prevented
+- synonym: Diarrhea
+  examples: |
+    - Gastroenteritis
+    - Loose stools
+    - Runny bowels
+    - Watery bowel movements
+    - Diarrheal disease
+    - Bowel looseness
+    - Loose motions
+    - Stomach flu
+    - Enteritis
+    - Montezuma's revenge
+    - traveler's diarrhea
+- synonym: Conjunctivitis
+  examples: |
+    - Pinkeye
+    - Red eye
+    - Eye infection
+    - Infectious conjunctivitis
+    - Viral conjunctivitis
+    - Bacterial conjunctivitis
+    - Allergic conjunctivitis
+    - Chemical conjunctivitis
+    - Toxic conjunctivitis
+    - Irritant conjunctivitis
 - synonym: Colds and Flu
   examples: |
     - Common cold
@@ -252,31 +274,6 @@ nlu:
     - Viral respiratory infection
     - Nasal congestion
     - Flu-like illness
-- synonym: Conjunctivitis
-  examples: |
-    - Red eye
-    - Eye infection
-    - Pinkeye
-    - Infectious conjunctivitis
-    - Viral conjunctivitis
-    - Bacterial conjunctivitis
-    - Allergic conjunctivitis
-    - Chemical conjunctivitis
-    - Toxic conjunctivitis
-    - Irritant conjunctivitis
-- synonym: Diarrhea
-  examples: |
-    - Loose stools
-    - Runny bowels
-    - Watery bowel movements
-    - Diarrheal disease
-    - Bowel looseness
-    - Loose motions
-    - Stomach flu
-    - Gastroenteritis
-    - Enteritis
-    - Montezuma's revenge
-    - traveler's diarrhea
 - synonym: Headaches
   examples: |
     - Cephalalgia
@@ -338,7 +335,6 @@ nlu:
     - Mononucleosis
     - Stomach Aches
     - allergies
-
 - lookup: infotype
   examples: |
     - Colds and Flu
