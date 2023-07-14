@@ -56,6 +56,17 @@ responses:
   - text: I'm sorry, I can't help you.
   utter_ask_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_start:
+  - text: Hi, I am Tia
+    buttons:
+      - title: "General Info"
+        payload: "/info_condition{{"infotype":"Overview"}}"
+      - title: "Symptoms"
+        payload: "/info_condition{{"infotype":"Symptoms"}}"
+      - title: "Should I see a doctor"
+        payload: "/info_condition{{"infotype":"When to see a doctor"}}"
+      - title: "Causes"
+        payload: "/info_condition{{"infotype":"Causes"}}"
 actions:
 - action_info
 - utter_greet
