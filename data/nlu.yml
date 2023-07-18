@@ -170,27 +170,27 @@ nlu:
     - I have [allergies] {"entity": "condition", "value": "Allergies"} can you help?
     - [Allergies] {"entity": "condition", "value": "Allergies"}, need help
     - I think I have an [allergies] {"entity": "condition", "value": "Allergies"}, what [can I do]{"entity": "infotype", "value": "Treatment"}?
-    - Can I get some help with [Conjunctivitis](condition)?
-    - My brother has [Conjunctivitis](condition), how [can I help]{"entity": "infotype", "value": "Treatment"} him?
-    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [conjunctivitis](condition)?
-    - How is [Diarrhea](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
-    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [Mononucleosis](condition)?
+    - Can I get some help with [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}?
+    - My brother has [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}, how [can I help]{"entity": "infotype", "value": "Treatment"} him?
+    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}?
+    - How is [Diarrhea]{"entity": "condition", "value": "Diarrhea"} [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [Mononucleosis]{"entity": "condition", "value": "Mononucleosis"}?
     - How is [Cold and Flu] {"entity": "condition", "value": " Common cold "} [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
     - Can you explain the [causes]{"entity": "infotype", "value": "Causes"} of {"entity": "condition", "value": "Allergies"}?
-    - What are some common [causes]{"entity": "infotype", "value": "Causes"} of [Conjunctivitis](condition)?
-    - Are there any effective [treatments]{"entity": "infotype", "value": "Treatment"} for [Conjunctivitis](condition)?
-    - How can I manage my [Mononucleosis](condition) on a daily basis?
-    - Can [Diarrhea](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
+    - What are some common [causes]{"entity": "infotype", "value": "Causes"} of [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}?
+    - Are there any effective [treatments]{"entity": "infotype", "value": "Treatment"} for [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}?
+    - How can I manage my [Mononucleosis]{"entity": "condition", "value": "Mononucleosis"} on a daily basis?
+    - Can [Diarrhea]{"entity": "condition", "value": "Diarrhea"} be [prevented]{"entity": "infotype", "value": "Prevention"}?
     - i NEED [INFO]{"entity": "infotype", "value": "Overview"} ON [allergies]{"entity": "condition", "value": "Allergies"}
-    - I need some help with [Conjunctivitis](condition)
-    - i NEED [INFO]{"entity": "infotype", "value": "Overview"} ON [Conjunctivitis](condition)
+    - I need some help with [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}
+    - i NEED [INFO]{"entity": "infotype", "value": "Overview"} ON [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}
     - I need [info]{"entity": "infotype", "value": "Overview"}.
-    - [Conjunctivitis](condition)
+    - [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"}
     - I need [info]{"entity": "infotype", "value": "Overview"} on [Pinkeye]{"entity": "condition", "value": "Conjunctivitis"}
     - Can you provide an [overview]{"entity": "infotype", "value": "Overview"} of [allergies]{"entity": "condition", "value": "Allergies"}?
-    - Tell me about [Conjunctivitis](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
+    - Tell me about [Conjunctivitis]{"entity": "condition", "value": "Conjunctivitis"} and its [treatment]{"entity": "infotype", "value": "Treatment"}.
     - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [asthma]{"entity": "condition", "value": "Asthma"}? 
-    - I need [info](infotype)
+    - I need {"entity": "infotype", "value": "Overview"}
     - [Overview]{"entity": "infotype", "value": "Overview"}
     - [Symptoms]{"entity": "infotype", "value": "Symptoms"}
     - [Symptom]{"entity": "infotype", "value": "Symptoms"}

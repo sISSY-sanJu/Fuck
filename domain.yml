@@ -9,6 +9,7 @@ intents:
 - mood_great
 - mood_unhappy
 - nlu_fallback
+- get_started
 entities:
 - infotype
 - condition
@@ -81,6 +82,7 @@ actions:
 - validate_info_form
 - utter_default
 - utter_ask_rephrase
+- utter_start
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

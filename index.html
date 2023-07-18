@@ -88,14 +88,21 @@
   <script>!(function () {
   let e = document.createElement("script"),
     t = document.head || document.getElementsByTagName("head")[0];
+
   (e.src =
-    "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+    "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
     (e.async = !0),
     (e.onload = () => {
       window.WebChat.default(
         {
+          initPayload: "/get_started",
           customData: { language: "en" },
           socketUrl: "http://localhost:5005/",
+          title: 'MedBot',
+          profileAvatar: "./public/robot.svg",
+          openLauncherImage: "./public/comment-alt.svg",
+          showFullScreenButton:	true,
+          storage: "session",
 
         },
         null
@@ -103,6 +110,8 @@
     }),
     t.insertBefore(e, t.firstChild);
    })();
+   sessionStorage.clear()
+   window.localStorage.clear()
   </script>
   </body>
 </html>
